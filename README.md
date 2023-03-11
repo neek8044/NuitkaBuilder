@@ -25,13 +25,8 @@ The project is Work-In-Progress and I am planning to add more compilation option
 ### Usage
 (example shows compilation process of a standalone onefile with fixed runtime directory)
 ```
-chmod +x ./nuitkabuilder.bin && ./nuitkabuilder.bin -o -r
-```
-or
-```
 python3 ./nuitkabuilder.py -o -r
 ```
 **NOTE: The file meant to be compiled must be named main.py**
 
-After completion, navigate to ./output/main.dist/ and you should see a 'main.bin' file which is what you should execute.
-
+After completion, navigate to ./output/main.dist/ and you should see a 'main.bin' file which is what you should execute with the rest of the files shipped together. If you used the onefile option, go to ./output/ and there should be a standalone main.bin file (you can delete the rest in this case).
