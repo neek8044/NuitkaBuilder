@@ -35,8 +35,7 @@ os.system("") # for an unknown reason colors do not work without an 'os.system' 
 # Starting info
 print(
     "\nReport issues on Github: https://github.com/neek8044/NuitkaBuilder\n", 
-    Fore.YELLOW + "\nNOTE: Linux requires 'patchelf' to be installed. Install it with your package manager if it does not work.\nYou may want to install 'ordered-set' with 'pip3 install ordered-set' for best compilation performance.", 
-    Style.BRIGHT + "\nWARNING:" + Style.NORMAL, "Wine mode is UNSTABLE! If it throws an error it would be because of the instability of the mode. Do not try to fix your Wine installation if that happens.", 
+    Fore.YELLOW + "\nNOTE: Linux requires 'patchelf' to be installed. You should install it with your package manager to use this program.\nYou may want to install 'ordered-set' with 'pip3 install ordered-set' for best compilation performance.",  
     Fore.BLUE + "\n--> Building standalone for main.py" + Fore.RESET
 )
 
