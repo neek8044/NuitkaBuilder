@@ -32,5 +32,5 @@ or
 python3 ./nuitkabuilder.py -o -r
 ```
 
-After completion, navigate to ./output/main.dist/ and you should see a 'main.bin'. If you did not use `--onefile`, ignore all the .so files and copy the rest to a new folder.
+After completion, navigate to ./output/main.dist/ and you should see a 'main.bin' which is what you should execute.
 
