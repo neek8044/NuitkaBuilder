@@ -66,4 +66,4 @@ else:
 
 print("\nFind this project on Github: https://github.com/neek8044/NuitkaBuilder")
 input("Press ENTER to exit...\n")
-
+sys.exit()
