@@ -7,7 +7,7 @@ import sys
 import os
 
 try:
-    from colorama import Fore
+    from colorama import Fore, Style
 except ImportError:
     print("--> Module 'colorama' not found. Run 'pip3 install colorama' to continue.")
     sys.exit()
@@ -34,16 +34,23 @@ os.system("") # for an unknown reason colors do not work without an 'os.system' 
 
 # Starting info
 print(
-    "Report issues on Github: https://github.com/neek8044/NuitkaBuilder\n" + Fore.YELLOW + "NOTE: Linux requires 'patchelf' to be installed. Install it with your package manager if it does not work.\n" + "NOTE: You may want to install 'ordered-set' with 'pip3 install ordered-set' for best compilation performance.\n" + Fore.BLUE + "Building standalone directory for main.py" + Fore.RESET
+    "\nReport issues on Github: https://github.com/neek8044/NuitkaBuilder\n", 
+    Fore.YELLOW + "\nNOTE: Linux requires 'patchelf' to be installed. Install it with your package manager if it does not work.\nYou may want to install 'ordered-set' with 'pip3 install ordered-set' for best compilation performance.", 
+    Style.BRIGHT + "\nWARNING:" + Style.NORMAL, "Wine mode is UNSTABLE! If it throws an error it would be because of the instability of the mode. Do not try to fix your Wine installation if that happens.", 
+    Fore.BLUE + "\n--> Building standalone for main.py" + Fore.RESET
 )
 
 
 # Executing nuitka for compilation
 start = time.time()
+full_command = str("wine " if wine else "") + f"python{'' if wine else '3'} -m nuitka --standalone {extras} --follow-imports --output-dir=\"{cwd}/output/\" main.py"
+
+print(Fore.MAGENTA + "Executing: " + full_command + Fore.RESET) if debug else ...
+
 nuitka = subprocess.Popen(
-    str("wine" if wine else "") + f"python3 -m nuitka --standalone {extras} --follow-imports --output-dir=\"{cwd}/output/\" main.py", 
+    full_command, 
     cwd=cwd, shell=True, 
-    stdout=subprocess.DEVNULL if debug == False else subprocess.STDOUT, 
+    stdout=subprocess.DEVNULL if debug == False else None, 
     stderr=subprocess.STDOUT
 )
 
@@ -53,7 +60,7 @@ anim_chars = ["\\", "|", "/", "-"]
 
 while nuitka.poll() is None:
     for i in anim_chars:
-        print("--> Please wait... " + i, end="\r")
+        print("--> Please wait, compiling... " + i, " "*10 if wine else "", end="\r")
         time.sleep(0.1)
 
 

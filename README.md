@@ -19,8 +19,8 @@ The project is Work-In-Progress and I am planning to add more compilation option
 ### Options
 - `--onefile`, `--single`, `-o` - Compiles the output to a single file instead of a directory
 - `--cwd-runtime`, `--runtime`, `-r` - Sets working dir to the local dir (where the file is ran from) upon execution. If your script reads local files, this is recommended.
-- `--windows`, `--wine`, `-w` - Uses the Wine compatibility layer to compile a Microsoft Windows version of the program. (Wine needs to be installed separately. Both python and nuitka have to be installed inside of Wine afterwards.)
-- `--debug`, `-d` - Shows nuitka output to the terminal instead of hiding it. (used to track errors, obviously)
+- `--windows`, `--wine`, `-w` - Uses the Wine compatibility layer to compile a Microsoft Windows version of the program. (Wine needs to be installed separately. Both python, nuitka, and nuitka dependencies for Windows have to be installed inside of Wine afterwards.)
+- `--debug`, `-d` - Shows command to be executed and nuitka output to the terminal instead of hiding it. (used to track errors, obviously)
 
 ### Usage
 (example shows compilation process of a standalone onefile with fixed runtime directory)
