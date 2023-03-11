@@ -1,10 +1,11 @@
 # NuitkaBuilder
 
-NuitkaBuilder is a python script used in the terminal that runs the appropriate nuitka command needed to compile a script as a standalone program. (similar to the auto-py-to-exe project). Made for Linux and Unix-based systems, but can be used on Windows as well.
+NuitkaBuilder is a python script used in the terminal that runs the appropriate nuitka command needed to compile a script as a standalone program. (similar to the auto-py-to-exe project). It passes the arguments given to nuitka and then compiles the file main.py. Made for Linux and Unix-based systems, but can be used on Windows as well. 
+
+(in the screenshot main.py was nuitkabuilder so it compiled itself)
+![screenshot](https://github.com/neek8044/NuitkaBuilder/blob/master/screenshot.png?raw=true)
 
 The project is Work-In-Progress and I am planning to add more compilation options
-
-![screenshot](https://github.com/neek8044/NuitkaBuilder/blob/main/screenshot.png?raw=true)
 
 #### Dependencies
 - Python 3.x
@@ -22,7 +23,6 @@ The project is Work-In-Progress and I am planning to add more compilation option
 - `--debug`, `-d` - Shows nuitka output to the terminal instead of hiding it. (used to track errors, obviously)
 
 ### Usage
-**NOTE: The main file name to compile MUST be main.py**
 (example shows compilation process of a standalone onefile with fixed runtime directory)
 ```
 chmod +x ./nuitkabuilder.bin && ./nuitkabuilder.bin -o -r
@@ -31,6 +31,7 @@ or
 ```
 python3 ./nuitkabuilder.py -o -r
 ```
+**NOTE: The file meant to be compiled must be named main.py**
 
 After completion, navigate to ./output/main.dist/ and you should see a 'main.bin' file which is what you should execute.
 
