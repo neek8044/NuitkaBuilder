@@ -25,10 +25,6 @@ The project is Work-In-Progress and I am planning to add more compilation option
 ### Usage
 (example shows compilation process of a standalone onefile with fixed runtime directory)
 ```
-chmod +x ./nuitkabuilder.bin && ./nuitkabuilder.bin -o -r
-```
-or
-```
 python3 ./nuitkabuilder.py -o -r
 ```
 **NOTE: The file meant to be compiled must be named main.py**
