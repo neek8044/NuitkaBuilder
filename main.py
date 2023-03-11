@@ -32,10 +32,9 @@ extras = " ".join(extras)
 cwd = os.getcwd()
 os.system("") # for an unknown reason colors do not work without an 'os.system' command in specific terminals
 
-
 # Starting info
 print(
-    Fore.YELLOW + "NOTE: Linux requires 'patchelf' to be installed. Use 'apt/dnf/yum install patchelf' or 'pacman -S patchelf' if it does not work.\n" + "NOTE: You may want to install 'ordered-set' with 'pip3 install ordered-set' for best compilation performance.\n" + Fore.BLUE + "STATUS: Building standalone directory for main.py" + Fore.RESET
+    "Report issues on Github: https://github.com/neek8044/NuitkaBuilder\n" + Fore.YELLOW + "NOTE: Linux requires 'patchelf' to be installed. Install it with your package manager if it does not work.\n" + "NOTE: You may want to install 'ordered-set' with 'pip3 install ordered-set' for best compilation performance.\n" + Fore.BLUE + "Building standalone directory for main.py" + Fore.RESET
 )
 
 
@@ -59,11 +58,12 @@ while nuitka.poll() is None:
 
 
 end = time.time()
-if end - start < 5:
-    print(Fore.RED + "ERROR: Could not build main.py.\nWhat to do:\n\t-> Make sure to have a 'main.py' file in this local folder.\n\t-> Make sure to have Nuitka installed in your Python3.\n\t-> If you are using Wine/Windows mode, check if Wine is installed and that you have Python 3 with Nuitka installed in Wine." + Fore.RESET)
+timeout = 5
+if end - start < timeout:
+    print(Fore.RED + "ERROR: Seems like an issue was encountered while building main.py.\nWhat to do:\n\t-> Make sure to have a 'main.py' file in this local folder.\n\t-> Make sure to have Nuitka installed in your Python3.\n\t-> If you are using Wine/Windows mode, check if Wine is installed and that you have Python 3 with Nuitka installed in Wine." + Fore.RESET)
 else:
-    print(Fore.GREEN + "\nSTATUS: Finished building main.py (./output/)" + Fore.RESET)
+    print(Fore.GREEN + "\nFinished building main.py (./output/main.dist/)" + Fore.RESET)
 
-print("\nFind this project on Github: https://github.com/neek8044/NuitkaBuilder")
-input("Press ENTER to exit...\n")
+input("\nPress ENTER to exit...\n")
 sys.exit()
+
