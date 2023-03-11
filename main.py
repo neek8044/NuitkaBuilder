@@ -17,11 +17,11 @@ extras = []
 wine = False
 debug = False
 
-if "--onefile" in sys.argv or "-single" in sys.argv or "-o" in sys.argv:
+if "--onefile" in sys.argv or "--single" in sys.argv or "-o" in sys.argv:
     extras.append("--onefile")
-if "--cwd-runtime" in sys.argv or "-runtime" in sys.argv or "-r" in sys.argv:
+if "--cwd-runtime" in sys.argv or "--runtime" in sys.argv or "-r" in sys.argv:
     extras.append("--file-reference-choice=runtime")
-if "--windows" in sys.argv or "-wine" in sys.argv or "-win" in sys.argv or "-w" in sys.argv:
+if "--windows" in sys.argv or "--wine" in sys.argv or "-w" in sys.argv:
     wine = True
 if "--debug" in sys.argv or "-d" in sys.argv:
     debug = True
