@@ -32,5 +32,5 @@ or
 python3 ./nuitkabuilder.py -o -r
 ```
 
-After completion, navigate to ./output/main.dist/ and you should see a 'main.bin' which is what you should execute.
+After completion, navigate to ./output/main.dist/ and you should see a 'main.bin' file which is what you should execute.
 
