@@ -8,12 +8,14 @@ NuitkaBuilder is a python script used in the terminal that runs the appropriate 
   - Colored
   - Less cluttered
 
-- No need to type the long commands, just run
-  - PyInstaller-like arguments
-    - For instance, instead of using `--onefile`, you can simply type `-o`
-  - Example:
-    - Nuitka command: `python3 -m nuitka --standalone --follow-imports --output-dir="./output/" --onefile --file-reference-choice=runtime main.py`
-    - NuitkaBuilder: `python3 nuitkabuilder.py -o -r`
+- PyInstaller-like arguments
+  - For example, instead of using `--file-reference-choice=runtime`, you can use `--cwd-runtime`
+
+- Predifined options and shortcuts
+
+  Here is a comparison of both of the commands:
+  - Nuitka command: `python3 -m nuitka --standalone --follow-imports --output-dir="./output/" --onefile --file-reference-choice=runtime main.py`
+   - NuitkaBuilder: `python3 nuitkabuilder.py -o -r`
 
 ![screenshot](https://github.com/neek8044/NuitkaBuilder/blob/master/screenshot.png?raw=true)
 *(in the screenshot main.py was nuitkabuilder so it compiled itself)*
