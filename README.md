@@ -2,6 +2,9 @@
 
 NuitkaBuilder is a python script used in the terminal that runs the appropriate nuitka command needed to compile a script as a standalone program. (similar to the auto-py-to-exe project). It passes the arguments given to nuitka and then compiles the file main.py. Made for Linux and Unix-based systems, but can be used on Windows as well. 
 
+![screenshot](https://github.com/neek8044/NuitkaBuilder/blob/master/screenshot.png?raw=true)
+*(in the screenshot main.py was nuitkabuilder so it compiled itself)*
+
 #### Why not just use Nuitka?
 - Better Terminal UI
   - More readable
@@ -16,9 +19,6 @@ NuitkaBuilder is a python script used in the terminal that runs the appropriate 
   Here is a comparison of both of the commands:
   - Nuitka command: `python3 -m nuitka --standalone --follow-imports --output-dir="./output/" --onefile --file-reference-choice=runtime main.py`
    - NuitkaBuilder: `python3 nuitkabuilder.py -o -r`
-
-![screenshot](https://github.com/neek8044/NuitkaBuilder/blob/master/screenshot.png?raw=true)
-*(in the screenshot main.py was nuitkabuilder so it compiled itself)*
 
 The project is Work-In-Progress and more compilation options will be added.
 

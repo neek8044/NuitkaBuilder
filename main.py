@@ -1,5 +1,7 @@
-# Nick Roussis
-# https://github.com/neek8044
+# NuitkaBuilder
+# Author: Nick Roussis
+# Github: https://github.com/neek8044/NuitkaBuilder
+# License: Apache 2.0
 
 import subprocess
 import time
