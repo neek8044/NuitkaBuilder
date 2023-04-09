@@ -9,8 +9,14 @@ import os
 try:
     from colorama import Fore, Style
 except ImportError:
-    print("--> Module 'colorama' not found. Run 'pip3 install colorama' to continue.")
-    sys.exit()
+    if input("--> Module 'colorama' not found. Run 'pip3 install colorama' now? [Y/n] : ").lower() == "n":
+        print("Aborted.")
+        sys.exit()
+    else:
+        os.system("pip3 install --upgrade colorama")
+        print("Done, please rerun.")
+        sys.exit()
+
 
 # Parsing options with argv
 extras = []
@@ -31,6 +37,7 @@ extras = " ".join(extras)
 
 cwd = os.getcwd()
 os.system("") # for an unknown reason colors do not work without an 'os.system' command in specific terminals
+
 
 # Starting info
 print(
@@ -64,11 +71,14 @@ while nuitka.poll() is None:
 
 
 end = time.time()
-timeout = 5
+timeout = 3
+
+# Code cannot be compiled as quickly as the timeout set, thus it must have failed. (might improve in the future)
 if end - start < timeout:
     print(Fore.RED + "ERROR: Seems like an issue was encountered while building main.py.\nWhat to do:\n\t-> Make sure to have a 'main.py' file in this local folder.\n\t-> Make sure to have Nuitka installed in your Python3.\n\t-> If you are using Wine/Windows mode, check if Wine is installed and that you have Python 3 with Nuitka installed in Wine." + Fore.RESET)
 else:
     print(Fore.GREEN + "\nFinished building main.py (./output/main.dist/)" + Fore.RESET)
+
 
 input("\nPress ENTER to exit...\n")
 sys.exit()
