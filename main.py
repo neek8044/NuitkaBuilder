@@ -41,9 +41,13 @@ os.system("") # for an unknown reason colors do not work without an 'os.system' 
 
 # Starting info
 print(
-    "\nReport issues on Github: https://github.com/neek8044/NuitkaBuilder\n", 
-    Fore.YELLOW + "\nNOTE: Linux requires 'patchelf' to be installed. You should install it with your package manager to use this program.\nYou may want to install 'ordered-set' with 'pip3 install ordered-set' for best compilation performance.",  
-    Fore.BLUE + "\n--> Building standalone for main.py" + Fore.RESET
+    Fore.BLUE, Style.BRIGHT, 
+    "\nCheck usage and report issues on Github: https://github.com/neek8044/NuitkaBuilder\n", 
+    Style.NORMAL, Fore.YELLOW, 
+    "\nNOTE: Linux requires 'patchelf' to be installed. You should install it with your package manager to use this program.\nYou may want to install 'ordered-set' with 'pip3 install ordered-set' for best compilation performance.",  
+    Fore.BLUE, 
+    "\n--> Building standalone for main.py", 
+    Fore.RESET
 )
 
 
