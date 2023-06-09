@@ -59,3 +59,8 @@ python3 ./nuitkabuilder.py -o -r
 **NOTE: The file meant to be compiled _must_ be named main.py**
 
 After completion, navigate to ./output/main.dist/ and you should see a 'main.bin' file which is what you should execute with the rest of the files shipped together. If you used the onefile option, go to ./output/ and there should be a standalone main.bin file (you can delete the rest in this case).
+
+### Contribution
+All PRs and issues are welcome. If you are to start a new issue, please check if there are any duplicates matching your bug, feature request, or question you might have.
+
+You can fork and pull request to the [dev](https://github.com/neek8044/NuitkaBuilder/tree/dev) branch if you want to commit to the repo. I am mostly online so I will merge it as soon as I can.
